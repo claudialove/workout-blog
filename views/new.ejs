@@ -1,0 +1,38 @@
+<%- include ("partials/header") %>
+
+
+<div class="ui main text container segment">
+    <div class="ui huge header">New Workout Log</div>
+
+
+    <form class="ui form" action="/workouts" method="POST">
+        <div class="field">
+            <label>Workout Name</label>
+            <input type="text" name="workout[name]" placeholder="Name your workout...">
+            <div class="field">
+                <label>Activties Included</label>
+                <input type="text" name="workout[activities]" placeholder="Add your activities, comma separated...">
+            </div>
+            <div class="field">
+            <label>Duration of Workout</label>
+            <input type="text" name="workout[duration]" placeholder="How long did you workout?">
+        </div>
+        <div class="field">
+        <label>Weight Used</label>
+        <input type="text" name="workout[weights]" placeholder="Enter weight used...can be body weight...">
+    </div>
+    <div class="field">
+        <label>Reps Completed</label>
+        <input type="text" name="workout[reps]" placeholder="Add reps here if applicable...">
+    </div>
+            <div class="field">
+                <label>Notes About Workout</label>
+                <textarea name="workout[notes]" required placeholder="Describe your workout here..."></textarea>
+            </div>
+            <input class="ui pink basic button" type="submit">
+    </form>
+</div>
+</div>
+
+
+<%- include ("partials/footer") %>

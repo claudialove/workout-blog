@@ -1,0 +1,39 @@
+<%- include ("partials/header") %>
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= workout.name %></div>
+    <div class="ui top attached">
+            <div class="content">
+                <div><strong>Log Date: </strong></div>
+                <span><%= workout.created.toDateString()%></span>
+            </div>
+            <div class="activity">
+                <div><strong>Activity: </strong></div>
+                <p><%= workout.activity %></p>
+            </div>
+            <div><strong>Duration: </strong></div>
+            <div class="duration">
+                <p><%= workout.duration %></p>
+            </div>
+            <div><strong>Weights (if applicable):</strong> </div>
+            <div class="weights">
+                <p><%= workout.weights %></p>
+            </div>
+            <div><strong>Reps (if applicable): </strong></div>
+            <div class="reps">
+                <p><%= workout.reps %></p>
+            </div>
+            <div><strong>Notes: </strong></div>
+            <div class="notes">
+                <p><%= workout.notes %></p>
+            </div>
+            <form action="/workouts/<%=workout._id%>/edit" method="GET">
+                <button class="ui floated blue basic button">Edit</button>
+            
+            <form action="/workouts/<%=workout._id%>?_method=DELETE" method="POST">
+                <button class="ui right aligned red basic button">Delete</button>
+            </form>
+        </div>
+    </div>
+    <br>
+</div>
+<%- include ("partials/footer") %>

@@ -1,0 +1,35 @@
+<%- include ("partials/header") %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Workout Tracker Blog: 
+        <p class="about">View or edit previous workouts, or add a new one today!!</p></div>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% workouts.forEach(function(workout){ %>
+            <div class="item">
+
+                <div class="content">
+                    <a class="header" href="/workouts/<%=workout._id%>"><%= workout.name %></a>
+                    <div class="meta">
+                        <span><%= workout.created.toDateString() %></span>
+                    </div>
+                    <div class="activtiy">
+                        <p><%= workout.activity %> </p>
+                    </div>
+                    <div class="notes">
+                        <p><%= workout.notes.substring(0, 100) %>...</p>
+                    </div>
+                    <div class="extras">
+                        <a class="ui floated basic black button" href="/workouts/<%=workout._id%>">
+                            Read More<i id="chevron" class="right chevron icon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <% });  %>
+        </div>
+    </div>
+</div>
+
+
+
+    <%- include ("partials/footer") %>
